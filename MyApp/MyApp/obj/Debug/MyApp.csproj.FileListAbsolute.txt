@@ -1,0 +1,6 @@
+C:\Troop4-Labs\MyApp\MyApp\bin\Debug\MyApp.exe.config
+C:\Troop4-Labs\MyApp\MyApp\bin\Debug\MyApp.exe
+C:\Troop4-Labs\MyApp\MyApp\bin\Debug\MyApp.pdb
+C:\Troop4-Labs\MyApp\MyApp\obj\Debug\MyApp.csprojResolveAssemblyReference.cache
+C:\Troop4-Labs\MyApp\MyApp\obj\Debug\MyApp.exe
+C:\Troop4-Labs\MyApp\MyApp\obj\Debug\MyApp.pdb
