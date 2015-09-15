@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html ng-app="EmployeeApp">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body ng-controller="EmployeeController as vm">
+    <form name="employeeForm" novalidate ng-submit="vm.save()">
+        <div>
+            <label>
+                First Name:
+                <input name="firstName" ng-model="vm.employee.firstName" type="text" ng-required="true" ng-trim="true" />
+                <span ng-show="employeeForm.firstName.$touched && employeeForm.firstName.$error.required" class="error">
+                    First Name is required.
+                </span>
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Last Name:
+                <input name="lastName" ng-model="vm.employee.lastName" type="text" ng-required="true" ng-trim="true" />
+                <span ng-show="employeeForm.lastName.$touched && employeeForm.lastName.$error.required" class="error">
+                    Last Name is required.
+                </span>
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Age:
+                <input name="age" ng-model="vm.employee.age" type="number" ng-required="true" />
+                <span ng-show="employeeForm.age.$touched && employeeForm.age.$error.required" class="error">
+                    Age is required.
+                </span>
+                <span ng-show="employeeForm.age.$touched && employeeForm.age.$error.number" class="error">
+                    Age must be a number.
+                </span>
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Employee Type:
+                <select name="employeeType" ng-model="vm.employee.employeeType" ng-required="true">
+                    <option value="FullTime">Full Time</option>
+                    <option value="PartTime">Part Time</option>
+                </select>
+                <span ng-show="employeeForm.employeeType.$touched && employeeForm.employeeType.$error.required" class="error">
+                    Employee Type is required.
+                </span>
+            </label>
+        </div>
+
+        <div ng-show="vm.employee.employeeType === 'FullTime'">
+            <label>
+                Yearly Salary:
+                <input name="yearlySalary" ng-model="vm.employee.yearlySalary" type="number" ng-required="vm.employee.employeeType === 'FullTime'" />
+                <span ng-show="employeeForm.yearlySalary.$touched && employeeForm.yearlySalary.$error.required" class="error">
+                    Yearly Salary is required.
+                </span>
+                <span ng-show="employeeForm.yearlySalary.$touched && employeeForm.yearlySalary.$error.number" class="error">
+                    Yearly Salary must be a number.
+                </span>
+            </label>
+        </div>
+
+        <div ng-show="vm.employee.employeeType === 'PartTime'">
+            <label>
+                Hourly Salary:
+                <input name="hourlySalary" ng-model="vm.employee.hourlySalary" type="number" ng-required="vm.employee.employeeType === 'PartTime'" />
+                <span ng-show="employeeForm.hourlySalary.$touched && employeeForm.hourlySalary.$error.required" class="error">
+                    Hourly Salary is required.
+                </span>
+                <span ng-show="employeeForm.hourlySalary.$touched && employeeForm.hourlySalary.$error.number" class="error">
+                    Hourly Salary must be a number.
+                </span>
+            </label>
+        </div>
+
+        <div>
+            <input type="submit" value="Save" ng-disabled="employeeForm.$invalid" />
+        </div>
+
+    </form>
+
+    <link href="/ngApps/EmployeeApp/AngularApps.css" rel="stylesheet" />
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/ngApps/EmployeeApp/employeeApp.js"></script>
+    <script src="/ngApps/EmployeeApp/employeeControllers.js"></script>
+
+</body>
+</html>

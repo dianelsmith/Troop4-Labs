@@ -1,0 +1,16 @@
+﻿[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.ng-touched.ng-invalid {
+    background-color: #FA787E;
+}
+
+.ng-touched.ng-valid {
+    background-color:lightgreen;
+}
+
+.error {
+    color: red;
+}
+
